@@ -1,0 +1,121 @@
+.s_leaflet_map {
+  > div {
+    > div {
+      background-color: black;
+      min-height: 600px;
+
+      .leaflet-popup-content-wrapper {
+        background: initial;
+        color: #333;
+        box-shadow: initial;
+      }
+      .leaflet-popup-close-button {
+        top: 13px;
+        right: 19px;
+      }
+      .leaflet-popup-tip-container {
+        display: none;
+      }
+    }
+  }
+  .company-card {
+    position: relative;
+    display: inline-block;
+    margin: auto;
+    padding: 20px;
+    min-width: 230px;
+    max-width: 300px;
+    width: 300px;
+    width: 100%;
+    color: #444444;
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    background-color: yellow;
+    background-image: url("https://www.plataformacocrear.com/web/image/3686/maqueta-mapa-cocrear.jpg");
+    background-position: center bottom;
+    background-size: cover;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: ~"calc(50% - 34px)";
+      top: 100%;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 22px 34px 0 34px;
+      border-color: #ffe900 transparent transparent transparent;
+    }
+
+    > * {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    .card-cont {
+      width: 100%;
+      color: #444;
+      background-color: #f0f0f0;
+    }
+    .profile-image {
+      img {
+        object-fit: cover;
+        min-width: 100%;
+        max-width: 100%;
+        height: 180px;
+      }
+    }
+
+    .card-info {
+      width: 100%;
+      padding: 15px;
+      color: #444;
+      display: inline-block;
+      position: relative;
+    }
+    h3 {
+      max-height: 43px;
+      overflow: hidden;
+      font-weight: 700;
+      font-size: 19px;
+      color: #001f44;
+      margin-top: 0px;
+      margin-bottom: 4px;
+    }
+    .contact-info {
+      list-style-type: none;
+      padding-inline-start: 0;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 13px;
+
+      li {
+        > i {
+          text-align: left;
+        }
+      }
+    }
+    p {
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+    .card-tags {
+      display: inline-block;
+      align-items: baseline;
+      text-overflow: ellipsis;
+      span {
+        background-color: #001f44;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 4px 8px;
+        line-height: 28px;
+        border-radius: 13px;
+        white-space: nowrap;
+      }
+    }
+  }
+}

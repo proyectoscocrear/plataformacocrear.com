@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- {
+                'categories': sorted([{'id': cat.id, 'title': cat.display_name} for cat in aliado.category_id], key=lambda c: c.get('title')),
+                'address': self._getAddress(aliado),
+                'website': aliado.website,
+                'phone': aliado.phone,
+                'email': aliado.email,
+                'city': {'id': aliado.city, 'title': aliado.city},
+                'image': '/website/image/res.partner/%d/image_128' % (aliado.id),
+                'title': aliado.display_name,
+                'id': aliado.id
+            } -->
+<templates xml:space="preserve">
+
+    <t t-name="aliados.popup">
+        <div class="company-card">
+            <div class="card-cont">
+                <div class="profile-image">
+                    <a t-att-href="website" target="_blank">
+                        <img t-att-src="image" t-attf-alt="#{title} imagen popup en mapa" />
+                    </a>
+                </div>
+                <div class="card-info">
+                    <h3>
+                        <t t-esc="title"/>
+                    </h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fa fa-map-marker fa-fw"></i>
+                            <span>
+                                <t t-esc="address" />
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <a t-attf-href="tel:#{phone}">
+                                <t t-esc="phone"/>
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <a t-attf-href="mailto:#{email}">
+                                <t t-esc="email"/>
+                            </a>
+                        </li>
+                    </ul>
+                    <p>
+                        <t t-esc="description"/>
+                    </p>
+                    <div class="card-tags">
+                        <t t-foreach="categories" t-as="category">
+                            <span>
+                                <t t-esc='category.title'/>
+                            </span>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </t>
+
+</templates>

@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_website_aliados_website_aliados,website_aliados.website_aliados,model_website_aliados_website_aliados,base.group_user,1,1,1,1

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate='0'>
+        <template id="aliados" name="Aliados">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty">
+                    <section class="i_aliados_map_filters">
+                        <div class="container">
+                            <div class="row">
+                                <div class='filters-container col-sm-12 col-md-3 col-lg-2'>
+                                    <form action="" method="GET" id='aliados_filter'>
+                                        <div class="col-sm-12 filters-container-title">
+                                            <h2>Filtros</h2>
+                                        </div>
+                                        <section class='aliados-filters'>
+                                            <div>
+                                                <label for="js_aliado_id">Busca por Aliado</label>
+                                                <select name="aliado_id" id="js_aliado_id" multiple="multiple">
+                                                    <option value="all" selected="">Todos los Aliados</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label for="js_aliado_city_id">Busca por Ciudad</label>
+                                                <select name="aliado_city_id" id="js_aliado_city_id" multiple="multiple">
+                                                    <option value="all" selected="">Todas las Ciudades</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label for="js_aliado_category_id">Busca por Etiquetas</label>
+                                                <select name="aliado_category_id" id="js_aliado_category_id" multiple="multiple">
+                                                    <option value="all" selected="">Todas las Categorias</option>
+                                                </select>
+                                            </div>
+                                            <br/>
+                                            <div>
+                                                <button id='js_filter_search_button' class="btn btn-primary col-sm-12">Buscar</button>
+                                            </div>
+                                        </section>
+                                    </form>
+                                </div>
+                                <div class="col-sm-12 col-md-9 col-lg-10">
+                                    <section class="s_leaflet_map" id="leaflet-map-container-aliados" data-name="Leaflet Map">
+                                        <div class="container">
+                                            <div id="leaflet-map-container-aliados-map"/>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

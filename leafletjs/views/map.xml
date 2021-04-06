@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="s_leaflet_map" name="Leaflet Map">
+        <section class="s_leaflet_map" id='leaflet-map-container'>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="alert alert-info css_non_editable_mode_hidden text-center" role="status">
+                            <span class="s_leaftlet_add_map" style="cursor: pointer;">
+                                <i class="fa fa-plus-circle"/>
+                                <b>Add a Map!</b>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="add_s_leaflet_map" inherit_id="website.snippets" name="Leaflet Snippet Add">
+        <xpath expr="//div[@id='snippet_structure']" position="inside">
+            <div class="o_panel_body">
+                <t t-snippet="leafletjs.s_leaflet_map" t-thumbnail="/website/static/src/img/snippets_thumbs/s_banner.png"/>
+            </div>
+        </xpath>
+    </template>
+    <template id="options_s_leaftlet_add_map" name="Leaflet Snippet Options" inherit_id="website.snippet_options">
+        <xpath expr="//div[@data-js='background']" position="before">
+            <div data-js='leafletmap' data-selector=".s_leaflet_map">
+                <we-button data-create-map="true" data-no-preview="true">
+                    <i class="fa fa-fw fa-plus-circle"/>
+                    <i>Add Map</i>
+                </we-button>
+            </div>
+        </xpath>
+    </template>
+    <template id="assets_frontend" name="LeafletJS Assets" inherit_id="website.assets_frontend">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/less" href="/leafletjs/static/src/css/lib/leaflet.css"/>
+            <link rel="stylesheet" type="text/less" href="/leafletjs/static/src/less/map.less"/>
+        </xpath>
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript" src="/leafletjs/static/src/js/lib/leaflet.js"/>
+            <script type="text/javascript" src="/leafletjs/static/src/js/leaflet.custom.js"/>
+            <script type="text/javascript" src="/leafletjs/static/src/js/map.options.js"/>
+            <script type="text/javascript" src="/leafletjs/static/src/js/map.animation.js"/>
+        </xpath>
+    </template>
+</odoo>

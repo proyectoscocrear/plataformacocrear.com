@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_partner_view_form" model="ir.ui.view">
+        <field name="name">res.partner.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority" eval="10"/>
+        <field name="arch" type="xml">
+            <page name='internal_notes' position="after">
+                <page name="leaftlefjs_map" string="Mapa de Aliados">
+                    <group>
+                        <group string="Marcador">
+                            <field name="marker_icon" widget='image' class="oe_avatar" options='{"preview_image": "marker_icon"}'/>
+                            <field name="l_latitude" />
+                            <field name="l_longitude" />
+                        </group>
+                        <group string="Ficha">
+                            <field name="image_popup_1920" widget='image' class="oe_avatar" options='{"preview_image": "image_popup_128"}'/>
+                            <field name="pop_up_description" string="Descripcion"/>
+                        </group>
+                    </group>
+                </page>
+            </page>
+        </field>
+    </record>
+
+
+</odoo>

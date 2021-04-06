@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="menu_aliados_map" model="website.menu">
+            <field name="name">Mapa de Aliados</field>
+            <field name="url">/aliados/mapa</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">40</field>
+        </record>
+    </data>
+</odoo>
