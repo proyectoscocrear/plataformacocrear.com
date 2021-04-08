@@ -45,8 +45,11 @@
                         </li>
                     </ul>
                     <p>
-                        <t t-esc="description"/>
+                        <t t-if="description" t-esc="description"/>
                     </p>
+                    <div t-if="action" class="card-discount">
+                        <a t-attf-href="#{action_url}">Solicitar Descuento</a>
+                    </div>
                     <div class="card-tags">
                         <t t-foreach="categories" t-as="category">
                             <span>

@@ -27,11 +27,14 @@ class WebsiteAliados(http.Controller):
                 'phone': aliado.phone,
                 'email': aliado.email,
                 'icon': '/website/image/res.partner/%d/marker_icon' % (aliado.id) if aliado.marker_icon else False,
-                'coords': (aliado.l_latitude, aliado.l_longitude), # +random.uniform(-3, 3)
+                # +random.uniform(-3, 3)
+                'coords': (aliado.l_latitude, aliado.l_longitude),
                 'description': aliado.pop_up_description,
                 'city': {'id': aliado.city, 'title': aliado.city},
                 'image': '/website/image/res.partner/%d/image_popup_512' % (aliado.id) if aliado.image_popup_512 else '/website/image/res.partner/%d/image_512' % (aliado.id),
                 'title': aliado.display_name,
+                'action': aliado.pop_up_action,
+                'action_url': aliado.pop_up_action_url,
                 'id': aliado.id
             })
         return data
