@@ -26,7 +26,7 @@ odoo.define("website_aliados.animation", function (require) {
         mutationsList.forEach((mutation) => {
           var img_list = $(mutation.target)
             .parent()
-            .find(".leaflet-pane.leaflet-tile-pane")
+            .find(".leaflet-pane")
             .find("img");
           img_list.each((index, element) => {
             element.setAttribute('style', element.getAttribute('style')+"transform: "+element.style.transform + " !important");
