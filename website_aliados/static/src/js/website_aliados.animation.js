@@ -29,7 +29,7 @@ odoo.define("website_aliados.animation", function (require) {
             .find(".leaflet-pane")
             .find("img");
           img_list.each((index, element) => {
-            if (!element.getAttribute("transformedByScript")) {
+            if (element.getAttribute("transformedByScript")=="false" || !element.getAttribute("transformedByScript")) {
               element.setAttribute(
                 "style",
                 element.getAttribute("style") +
