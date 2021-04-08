@@ -7,6 +7,8 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     pop_up_description = fields.Text(string='Descripcion para el marcador')
+    pop_up_action = fields.Boolean(string='Botón de acción')
+    pop_up_action_url = fields.Char(string='Url Botón de acción')
     l_latitude = fields.Float(string='Latitud', digits=(
         18, 15), default=4.570868)
     l_longitude = fields.Float(string='Longitud', digits=(
