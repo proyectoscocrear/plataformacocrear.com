@@ -1,4 +1,5 @@
 "use strict";
+window.L_DISABLE_3D = true;
 window.leafletMaps = {};
 
 L.Map.addInitHook(function () {
