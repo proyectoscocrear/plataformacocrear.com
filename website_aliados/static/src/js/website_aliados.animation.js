@@ -20,16 +20,11 @@ odoo.define("website_aliados.animation", function (require) {
      * @override
      */
     _setStyleEvents: function (self) {
-      var event = new $.Event("style"),
-        original_trigger_fn = $.fn.css;
-      $.fn.css = function () {
-        $(this).trigger(event);
-        return original_trigger_fn.apply(this, arguments);
-      };
-      self
-        .$(".leaflet-proxy.leaflet-zoom-animated")
-        .bind("style", function (e) {
-          var img_list = $(this)
+      const target = self.$(".leaflet-proxy.leaflet-zoom-animated");
+      const config = { attributes: true, attributeFilter: ["style"] };
+      const callback = function (mutationsList, observer) {
+        mutationsList.forEach((mutation) => {
+          var img_list = $(mutation.target)
             .parent.find(".leaflet-pane.leaflet-tile-pane")
             .find("img");
           img_list.forEach((element) => {
@@ -39,6 +34,9 @@ odoo.define("website_aliados.animation", function (require) {
             );
           });
         });
+      };
+      const observer = new MutationObserver(callback);
+      observer.observe(target, config);
     },
     start: function () {
       var self = this;
