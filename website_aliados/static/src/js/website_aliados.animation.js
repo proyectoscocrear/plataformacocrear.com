@@ -37,7 +37,7 @@ odoo.define("website_aliados.animation", function (require) {
                   element.style.transform +
                   " !important;"
               );
-              element.setAttribute("transformedByScript", true);
+              element.setAttribute("transformedByScript", $(element).parent().hasClass("leaflet-tile-pane"));
             }
           });
         });
