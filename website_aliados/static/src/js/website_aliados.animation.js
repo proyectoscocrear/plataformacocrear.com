@@ -20,7 +20,7 @@ odoo.define("website_aliados.animation", function (require) {
      * @override
      */
     _setStyleEvents: function (self) {
-      const target = self.$(".leaflet-proxy.leaflet-zoom-animated");
+      const target = self.$(".leaflet-proxy.leaflet-zoom-animated")[0];
       const config = { attributes: true, attributeFilter: ["style"] };
       const callback = function (mutationsList, observer) {
         mutationsList.forEach((mutation) => {
