@@ -29,7 +29,7 @@ odoo.define("website_aliados.animation", function (require) {
             .find(".leaflet-pane.leaflet-tile-pane")
             .find("img");
           img_list.each((index, element) => {
-            $(element).css("transform", $(element).css("transform") + " !important");
+            element.style.transform = element.style.transform + " !important";
           });
         });
       };
