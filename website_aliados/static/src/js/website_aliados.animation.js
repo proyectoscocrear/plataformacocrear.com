@@ -25,7 +25,7 @@ odoo.define("website_aliados.animation", function (require) {
       const callback = function (mutationsList, observer) {
         mutationsList.forEach((mutation) => {
           var img_list = $(mutation.target)
-            .parent.find(".leaflet-pane.leaflet-tile-pane")
+            .parent().find(".leaflet-pane.leaflet-tile-pane")
             .find("img");
           img_list.forEach((element) => {
             $(element).css(
