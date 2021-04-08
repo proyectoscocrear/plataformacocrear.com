@@ -42,7 +42,7 @@ odoo.define("website_aliados.animation", function (require) {
     },
     start: function () {
       var self = this;
-      _setStyleEvents(self);
+      this._setStyleEvents(self);
       this.select_aliado_id = this.$("#js_aliado_id");
       this.select_aliado_category_id = this.$("#js_aliado_category_id");
       this.select_aliado_city_id = this.$("#js_aliado_city_id");
