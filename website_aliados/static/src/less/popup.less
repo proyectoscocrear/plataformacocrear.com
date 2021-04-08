@@ -1,6 +1,11 @@
 .s_leaflet_map {
-  > div {
-    > div {
+  border-radius: 13px;
+  box-shadow: -3px 4px 8px rgb(0 0 0 / 20%);
+  border: 1px solid #868686;
+  overflow: hidden;
+
+  >div {
+    >div {
       background-color: black;
       min-height: 600px;
 
@@ -9,28 +14,30 @@
         color: #333;
         box-shadow: initial;
       }
+
       .leaflet-popup-close-button {
         top: 13px;
         right: 19px;
       }
+
       .leaflet-popup-tip-container {
         display: none;
       }
     }
   }
+
   .company-card {
     position: relative;
     display: inline-block;
     margin: auto;
-    padding: 20px;
-    min-width: 230px;
-    max-width: 300px;
-    width: 300px;
+    padding: 12px;
+    min-width: 190px;
+    max-width: 260px;
     width: 100%;
     color: #444444;
     text-align: left;
     font-family: "Montserrat", sans-serif;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 10px 30px rgb(0 0 0 / 50%);
     background-color: yellow;
     background-image: url("https://www.plataformacocrear.com/web/image/3686/maqueta-mapa-cocrear.jpg");
     background-position: center bottom;
@@ -48,15 +55,17 @@
       border-color: #ffe900 transparent transparent transparent;
     }
 
-    > * {
+    >* {
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
     }
+
     .card-cont {
       width: 100%;
       color: #444;
       background-color: #f0f0f0;
     }
+
     .profile-image {
       img {
         object-fit: cover;
@@ -73,6 +82,7 @@
       display: inline-block;
       position: relative;
     }
+
     h3 {
       max-height: 43px;
       overflow: hidden;
@@ -82,6 +92,7 @@
       margin-top: 0px;
       margin-bottom: 4px;
     }
+
     .contact-info {
       list-style-type: none;
       padding-inline-start: 0;
@@ -90,31 +101,63 @@
       font-size: 13px;
 
       li {
-        > i {
+        >i {
           text-align: left;
         }
       }
     }
+
     p {
-      font-size: 14px;
+      font-size: 13px !important;
       font-weight: 500;
       margin-top: 5px;
       margin-bottom: 15px;
     }
+
     .card-tags {
       display: inline-block;
       align-items: baseline;
       text-overflow: ellipsis;
+
       span {
         background-color: #001f44;
         color: #fff;
-        font-size: 13px;
-        font-weight: 600;
+        font-size: 11px;
+        font-weight: 500;
         text-transform: uppercase;
         padding: 4px 8px;
-        line-height: 28px;
+        line-height: 24px;
         border-radius: 13px;
         white-space: nowrap;
+        letter-spacing: 0.03rem;
+      }
+    }
+  }
+
+  .leaflet-touch {
+
+    .leaflet-control-layers,
+    .leaflet-bar {
+      border: 0;
+
+      a {
+
+        border: 0;
+        border-radius: 50%;
+        background-color: #171737;
+        color: white;
+        transition: 0.4s ease;
+
+        &:first-child {
+          margin-bottom: 5px;
+        }
+
+        &:hover {
+          background-color: #ffe90b;
+          color: #171737;
+          transition: 0.4s ease;
+        }
+
       }
     }
   }

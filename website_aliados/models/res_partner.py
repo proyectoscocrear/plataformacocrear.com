@@ -7,12 +7,15 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     pop_up_description = fields.Text(string='Descripcion para el marcador')
+    pop_up_action = fields.Boolean(string='Botón de acción')
+    pop_up_action_url = fields.Char(string='Url Botón de acción')
     l_latitude = fields.Float(string='Latitud', digits=(
         18, 15), default=4.570868)
     l_longitude = fields.Float(string='Longitud', digits=(
         18, 15), default=-74.297333)
     marker_icon = fields.Image("Icono Marcador", max_width=50, max_height=50)
-    image_popup_1920 = fields.Image("Image Popup", max_width=1920, max_height=1920)
+    image_popup_1920 = fields.Image(
+        "Image Popup", max_width=1920, max_height=1920)
     # resized fields stored (as attachment) for performance
     image_popup_1024 = fields.Image(
         "Image Popup 1024", related="image_popup_1920", max_width=1024, max_height=1024, store=True)

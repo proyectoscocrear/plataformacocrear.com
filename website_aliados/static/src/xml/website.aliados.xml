@@ -25,19 +25,19 @@
                         <t t-esc="title"/>
                     </h3>
                     <ul class="contact-info">
-                        <li>
+                        <li t-if="address">
                             <i class="fa fa-map-marker fa-fw"></i>
                             <span>
                                 <t t-esc="address" />
                             </span>
                         </li>
-                        <li>
+                        <li t-if="phone">
                             <i class="fa fa-phone"></i>
                             <a t-attf-href="tel:#{phone}">
                                 <t t-esc="phone"/>
                             </a>
                         </li>
-                        <li>
+                        <li t-if="email">
                             <i class="fa fa-envelope"></i>
                             <a t-attf-href="mailto:#{email}">
                                 <t t-esc="email"/>
@@ -45,8 +45,11 @@
                         </li>
                     </ul>
                     <p>
-                        <t t-esc="description"/>
+                        <t t-if="description" t-esc="description"/>
                     </p>
+                    <div t-if="action" class="card-discount">
+                        <a t-attf-href="#{action_url}">Solicitar Descuento</a>
+                    </div>
                     <div class="card-tags">
                         <t t-foreach="categories" t-as="category">
                             <span>
