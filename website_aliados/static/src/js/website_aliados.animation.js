@@ -27,10 +27,10 @@ odoo.define("website_aliados.animation", function (require) {
           var img_list = $(mutation.target)
             .parent().find(".leaflet-pane.leaflet-tile-pane")
             .find("img");
-          img_list.forEach((element) => {
-            $(element).css(
+          img_list.each((index, element) => {
+            $(this).css(
               "transform",
-              $(element).css("transform") + " !important"
+              $(this).css("transform") + " !important"
             );
           });
         });
