@@ -20,7 +20,7 @@ odoo.define("leaflet.map.animation", function (require) {
         closePopupOnClick: true,
         boxZoom: true,
         draggin: true,
-        preferCanvas: false,
+        preferCanvas: true,
       };
       this._getMap();
       this._setMainTileLayer(
