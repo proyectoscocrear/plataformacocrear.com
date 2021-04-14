@@ -6,7 +6,7 @@
                 <div class="container">
                     <div class="row">
                         <t t-call="website_aliados.aliados_filters"/>
-                        <div class="col-sm-12 col-md-9 col-lg-10">
+                        <div class="col-10 offset-1 col-sm-12 offset-sm-0 col-md-12 col-lg-8">
                             <t t-call="website_aliados.aliados_map_container"/>
                         </div>
                     </div>
