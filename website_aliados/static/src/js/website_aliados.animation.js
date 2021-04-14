@@ -19,8 +19,36 @@ odoo.define("website_aliados.animation", function (require) {
     /**
      * @override
      */
+    _setStyleEvents: function (self) {
+      const target = self.$(".leaflet-proxy.leaflet-zoom-animated")[0];
+      const config = { attributes: true, attributeFilter: ["style"] };
+      const callback = function (mutationsList, observer) {
+        mutationsList.forEach((mutation) => {
+          var img_list = $(mutation.target)
+            .parent()
+            .find(".leaflet-pane")
+            .find("img");
+          img_list.each((index, element) => {
+            if (element.getAttribute("transformedByScript")=="false" || !element.getAttribute("transformedByScript")) {
+              element.setAttribute(
+                "style",
+                element.getAttribute("style") +
+                  "transform: " +
+                  element.style.transform +
+                  " !important;"
+              );
+              // Aseguramos que si es markador se re organice siempre
+              element.setAttribute("transformedByScript", $(element).parent().hasClass("leaflet-tile-pane"));
+            }
+          });
+        });
+      };
+      const observer = new MutationObserver(callback);
+      observer.observe(target, config);
+    },
     start: function () {
       var self = this;
+      this._setStyleEvents(self);
       this.select_aliado_id = this.$("#js_aliado_id");
       this.select_aliado_category_id = this.$("#js_aliado_category_id");
       this.select_aliado_city_id = this.$("#js_aliado_city_id");

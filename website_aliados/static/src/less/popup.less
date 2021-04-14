@@ -81,6 +81,36 @@
       color: #444;
       display: inline-block;
       position: relative;
+
+      .card-discount {
+        display: inline-block;
+        align-items: baseline;
+        text-overflow: ellipsis;
+        margin-bottom: 5px;
+        margin-left: 0px;
+        transition: 0.4s ease;
+
+        &:hover {
+          margin-left: 5px;
+          transition: 0.4s ease;
+        }
+
+        a {
+          background-color: #ffe90b;
+          color: #001f44;
+          font-size: 11px;
+          font-weight: 700;
+          text-transform: uppercase;
+          padding: 4px 8px;
+          line-height: 24px;
+          border-radius: 13px;
+          white-space: nowrap;
+          letter-spacing: 0.02rem;
+          text-decoration: none;
+          outline: none;
+          box-shadow: -1px 2px 2px 0px rgb(0, 0, 0, 0.2);
+        }
+      }
     }
 
     h3 {
