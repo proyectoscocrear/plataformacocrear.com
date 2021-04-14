@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate='0'>
+        <template id="aliados_map_container" name="Mapa Aliados">
+
+            <section class="s_leaflet_map" id="leaflet-map-container-aliados" data-name="Leaflet Map">
+                <div class="container">
+                    <div id="leaflet-map-container-aliados-map"/>
+                </div>
+            </section>
+
+        </template>
+    </data>
+</odoo>
