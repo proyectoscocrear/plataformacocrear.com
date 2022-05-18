@@ -30,7 +30,7 @@ class Course(models.Model):
     
     session_ids = fields.One2many(comodel_name='academy.sessioon',
                                  inverse_name='course_id',
-                                 string)
+                                 string='Sessions')
     
     
     @api.onchange('base_price', 'additional_fee')
